@@ -1,6 +1,6 @@
 {
   "name": "arpg-equipments",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "author": "Iguera",
   "description": "6 Tiers of Special Equipment Chests (4 extra mods) earned by killing monsters, based on their level. And a Hub with custom NPCs for Advanced Crafting and customizing Chests Drop Rate",
 
@@ -18,7 +18,7 @@
       "type": "boolean",
       "default": true,
       "label": "Tier 1 Chest - Renewal and Pre-Renewal",
-      "description": "Primary rate: Monster Lvl 1-30 (default 5%). Secondary rate: Monster Lvl 31-99 (fixed 2%)."
+      "description": "Primary rate: Monster Lvl 1-30 (default 5%). Secondary rate: Monster Lvl 31-99 (default 2%)."
     },
     {
       "key": "chest_1_rate",
@@ -30,11 +30,20 @@
       "description": "Percent chance a Tier 1 chest drops from a Monster Lvl 1-30 kill."
     },
     {
+      "key": "chest_1_secondary_rate",
+      "type": "number",
+      "default": 2,
+      "min": 0,
+      "max": 100,
+      "label": "Tier 1 secondary drop rate (%)",
+      "description": "Percent chance a Tier 1 chest drops from a Monster Lvl 31-99 kill."
+    },
+    {
       "key": "chest_2",
       "type": "boolean",
       "default": true,
       "label": "Tier 2 Chest - Renewal and Pre-Renewal",
-      "description": "Primary rate: Monster Lvl 31-60 (default 5%). Secondary rate: Monster Lvl 61-99 (fixed 2%)."
+      "description": "Primary rate: Monster Lvl 31-60 (default 5%). Secondary rate: Monster Lvl 61-99 (default 2%)."
     },
     {
       "key": "chest_2_rate",
@@ -46,11 +55,20 @@
       "description": "Percent chance a Tier 2 chest drops from a Monster Lvl 31-60 kill."
     },
     {
+      "key": "chest_2_secondary_rate",
+      "type": "number",
+      "default": 2,
+      "min": 0,
+      "max": 100,
+      "label": "Tier 2 secondary drop rate (%)",
+      "description": "Percent chance a Tier 2 chest drops from a Monster Lvl 61-99 kill."
+    },
+    {
       "key": "chest_3",
       "type": "boolean",
       "default": true,
       "label": "Tier 3 Chest - Renewal and Pre-Renewal",
-      "description": "Primary rate: Monster Lvl 61-99 (default 3%). Secondary rate: Monster Lvl 100-150 (fixed 2%)."
+      "description": "Primary rate: Monster Lvl 61-99 (default 3%). Secondary rate: Monster Lvl 100-150 (default 2%)."
     },
     {
       "key": "chest_3_rate",
@@ -62,11 +80,20 @@
       "description": "Percent chance a Tier 3 chest drops from a Monster Lvl 61-99 kill."
     },
     {
+      "key": "chest_3_secondary_rate",
+      "type": "number",
+      "default": 2,
+      "min": 0,
+      "max": 100,
+      "label": "Tier 3 secondary drop rate (%)",
+      "description": "Percent chance a Tier 3 chest drops from a Monster Lvl 100-150 kill."
+    },
+    {
       "key": "chest_4",
       "type": "boolean",
       "default": true,
       "label": "Tier 4 Chest - Renewal ONLY - Turn off if playing on Pre-RE",
-      "description": "Primary rate: Monster Lvl 100-150 (default 5%). Secondary rate: Monster Lvl 151-250 (fixed 2%)."
+      "description": "Primary rate: Monster Lvl 100-150 (default 5%). Secondary rate: Monster Lvl 151-250 (default 2%)."
     },
     {
       "key": "chest_4_rate",
@@ -78,11 +105,20 @@
       "description": "Percent chance a Tier 4 chest drops from a Monster Lvl 100-150 kill."
     },
     {
+      "key": "chest_4_secondary_rate",
+      "type": "number",
+      "default": 2,
+      "min": 0,
+      "max": 100,
+      "label": "Tier 4 secondary drop rate (%)",
+      "description": "Percent chance a Tier 4 chest drops from a Monster Lvl 151-250 kill."
+    },
+    {
       "key": "chest_5",
       "type": "boolean",
       "default": true,
       "label": "Tier 5 Chest - Renewal ONLY - Turn off if playing on Pre-RE",
-      "description": "Primary rate: Monster Lvl 151-200 (default 4%). Secondary rate: Monster Lvl 201-250 (fixed 2%)."
+      "description": "Primary rate: Monster Lvl 151-200 (default 4%). Secondary rate: Monster Lvl 201-250 (default 2%)."
     },
     {
       "key": "chest_5_rate",
@@ -92,6 +128,15 @@
       "max": 100,
       "label": "Tier 5 primary drop rate (%)",
       "description": "Percent chance a Tier 5 chest drops from a Monster Lvl 151-200 kill."
+    },
+    {
+      "key": "chest_5_secondary_rate",
+      "type": "number",
+      "default": 2,
+      "min": 0,
+      "max": 100,
+      "label": "Tier 5 secondary drop rate (%)",
+      "description": "Percent chance a Tier 5 chest drops from a Monster Lvl 201-250 kill."
     },
     {
       "key": "chest_6",

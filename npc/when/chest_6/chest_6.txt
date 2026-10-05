@@ -1,17 +1,21 @@
 // ARPG Equipments Mod - Made by Iguera
+
 -	script	ARPG_Chest6_Drop	-1,{
 	end;
 
 OnInit:
 	.id = 55005;
-	.default_rate = callfunc("F_ModSetting", "arpg-equipments", "chest_6_rate", 4) * 100;
+
+	// Single rate (Lvl 200 - 250, default 4%)
+	.@r1$ = replacestr("" + callfunc("F_ModSetting", "arpg-equipments", "chest_6_rate", "4"), ",", ".");
+	.@dot1 = strpos(.@r1$, ".");
+	.default_rate = (.@dot1 == -1 ? (atoi(.@r1$) * 100) : ((atoi(substr(.@r1$, 0, .@dot1 - 1)) * 100) + (atoi(charat(.@r1$, .@dot1 + 1)) * 10)));
 	end;
 
 OnNPCKillEvent:
 	.@lv = getmonsterinfo(killedrid, MOB_LV);
 	if (.@lv < 200 || .@lv > 250) end;
 
-	// Use custom rate if configured, otherwise default to 400 (4%)
 	.@main_rate = ($Chest6_Rate > 0) ? $Chest6_Rate : .default_rate;
 
 	if (.@main_rate > 0 && rand(10000) < .@main_rate) {

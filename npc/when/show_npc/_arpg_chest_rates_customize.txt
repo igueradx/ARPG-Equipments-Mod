@@ -4,37 +4,46 @@
 arpg_hub,160,124,4	script	Chest Drop Customizer	61,{
 
 OnTalk:
-	// Pre-calculate current percentage values to avoid parser stack issues.
-	// When no in-game override is set, fall back to the mod-settings value so
-	// what this NPC shows matches what the chest scripts actually use.
-	.@d1 = callfunc("F_ModSetting", "arpg-equipments", "chest_1_rate", 5) * 100;
-	.@d2 = callfunc("F_ModSetting", "arpg-equipments", "chest_2_rate", 5) * 100;
-	.@d3 = callfunc("F_ModSetting", "arpg-equipments", "chest_3_rate", 3) * 100;
-	.@d4 = callfunc("F_ModSetting", "arpg-equipments", "chest_4_rate", 5) * 100;
-	.@d5 = callfunc("F_ModSetting", "arpg-equipments", "chest_5_rate", 4) * 100;
-	.@d6 = callfunc("F_ModSetting", "arpg-equipments", "chest_6_rate", 4) * 100;
-	.@r1 = ($Chest1_Rate > 0 ? $Chest1_Rate : .@d1) / 100;
-	.@r2 = ($Chest2_Rate > 0 ? $Chest2_Rate : .@d2) / 100;
-	.@r3 = ($Chest3_Rate > 0 ? $Chest3_Rate : .@d3) / 100;
-	.@r4 = ($Chest4_Rate > 0 ? $Chest4_Rate : .@d4) / 100;
-	.@r5 = ($Chest5_Rate > 0 ? $Chest5_Rate : .@d5) / 100;
-	.@r6 = ($Chest6_Rate > 0 ? $Chest6_Rate : .@d6) / 100;
+	// Pre-calculate default basis points from Mod Settings (supports float/int strings)
+	for (.@i = 1; .@i <= 6; .@i++) {
+		.@def_val$ = (.@i == 3 ? "3" : (.@i >= 5 ? "4" : "5"));
+		.@raw$ = replacestr("" + callfunc("F_ModSetting", "arpg-equipments", "chest_" + .@i + "_rate", .@def_val$), ",", ".");
+		.@dot = strpos(.@raw$, ".");
+		if (.@dot == -1) {
+			.@d[.@i] = atoi(.@raw$) * 100;
+		} else {
+			.@d[.@i] = (atoi(substr(.@raw$, 0, .@dot - 1)) * 100) + (atoi(charat(.@raw$, .@dot + 1)) * 10);
+		}
+	}
+
+	// Format basis points for display in menu (e.g. 500 -> "5", 150 -> "1.5", 10 -> "0.1")
+	for (.@i = 1; .@i <= 6; .@i++) {
+		.@bp = ($Chest1_Rate && .@i == 1 ? $Chest1_Rate :
+		       ($Chest2_Rate && .@i == 2 ? $Chest2_Rate :
+		       ($Chest3_Rate && .@i == 3 ? $Chest3_Rate :
+		       ($Chest4_Rate && .@i == 4 ? $Chest4_Rate :
+		       ($Chest5_Rate && .@i == 5 ? $Chest5_Rate :
+		       ($Chest6_Rate && .@i == 6 ? $Chest6_Rate : .@d[.@i]))))));
+
+		.@w = .@bp / 100;
+		.@f = (.@bp % 100) / 10;
+		.@r$[.@i] = (.@f > 0 ? ("" + .@w + "." + .@f) : ("" + .@w));
+	}
 
 	mes "[Chest Drop Customizer]";
 	mes "Select an option to manage the chest primary drop rates:";
 	mes "^0000FFBe aware that this chance only affects the primary drop source for each chest (Ex: Lvls 1-30 for Tier 1). Their drop chance by monsters of a higher level remains unchanged. You can refer to those chances in the Mod Settings^000000";
 	next;
 
-	// Option 1 is now Reset; comma-separated parameters prevent string/colon splitting bugs
 	.@menu = select(
 		"Reset all to default intended rates",
 		"Reset to custom rates (Mod Settings)",
-		"Tier 1 (MLvl 1-30) Drop - " + .@r1 + "%",
-		"Tier 2 (MLvl 31-60) Drop - " + .@r2 + "%",
-		"Tier 3 (MLvl 61-99) Drop - " + .@r3 + "%",
-		"Tier 4 (MLvl 100-150) Drop - " + .@r4 + "%",
-		"Tier 5 (MLvl 151-200) Drop - " + .@r5 + "%",
-		"Tier 6 (MLvl 200-250) Drop - " + .@r6 + "%"
+		"Tier 1 (MLvl 1-30) Drop - " + .@r$[1] + "%",
+		"Tier 2 (MLvl 31-60) Drop - " + .@r$[2] + "%",
+		"Tier 3 (MLvl 61-99) Drop - " + .@r$[3] + "%",
+		"Tier 4 (MLvl 100-150) Drop - " + .@r$[4] + "%",
+		"Tier 5 (MLvl 151-200) Drop - " + .@r$[5] + "%",
+		"Tier 6 (MLvl 200-250) Drop - " + .@r$[6] + "%"
 	);
 
 	// Case 1: Reset everything back to intended defaults
@@ -46,10 +55,10 @@ OnTalk:
 		$Chest5_Rate = 400;
 		$Chest6_Rate = 400;
 		mes "[Chest Drop Customizer]";
-		mes "All chest primary rates have been reset to default!";
+		mes "All chest primary rates have been reset to default intended rates!";
 		close;
 	}
-	
+
 	// Case 2: Reset back to custom values (Mod Settings)
 	if (.@menu == 2) {
 		$Chest1_Rate = 0;
@@ -59,17 +68,28 @@ OnTalk:
 		$Chest5_Rate = 0;
 		$Chest6_Rate = 0;
 		mes "[Chest Drop Customizer]";
-		mes "All chest primary rates have been reset to default!";
+		mes "All chest primary rates have been reset to Mod Settings values!";
 		close;
 	}
 
-	// For Chests 1 through 6
+	// Smart string input allowing both integers and decimals (e.g. 5, 1.5, or 0.1)
 	mes "[Chest Drop Customizer]";
-	mes "Enter new primary drop percentage (1 to 100):";
-	input .@val, 1, 100;
+	mes "Enter new primary drop percentage. Accepts decimal numbers (example: ^0000FF5^000000, ^0000FF1.5^000000, or ^0000FF0.1^000000):";
+	input .@input$;
 
-	// Convert whole % into basis points (e.g. 50% -> 5000)
-	.@rate = .@val * 100;
+	.@str$ = replacestr(.@input$, ",", ".");
+	.@dot = strpos(.@str$, ".");
+	if (.@dot == -1) {
+		.@rate = atoi(.@str$) * 100;
+	} else {
+		.@int_part = atoi(substr(.@str$, 0, .@dot - 1));
+		.@dec_part = atoi(charat(.@str$, .@dot + 1));
+		.@rate = (.@int_part * 100) + (.@dec_part * 10);
+	}
+
+	// Clamp between 0.1% (10) and 100.0% (10000)
+	if (.@rate < 10) .@rate = 10;
+	if (.@rate > 10000) .@rate = 10000;
 
 	switch (.@menu) {
 		case 3: $Chest1_Rate = .@rate; break;
@@ -80,12 +100,15 @@ OnTalk:
 		case 8: $Chest6_Rate = .@rate; break;
 	}
 
+	.@w = .@rate / 100;
+	.@f = (.@rate % 100) / 10;
+	.@disp$ = (.@f > 0 ? ("" + .@w + "." + .@f) : ("" + .@w));
+
 	mes "[Chest Drop Customizer]";
-	mes "Rate updated to " + .@val + "%! The secondary rate remains unchanged.";
+	mes "Rate updated to ^00FF00" + .@disp$ + "%^000000! The secondary rate remains unchanged.";
 	close;
 
 OnInit:
-	// Bind @chestrates GM/player command
 	bindatcmd "chestrates", strnpcinfo(3) + "::OnCommand", 0, 100;
 	end;
 

@@ -1,8 +1,14 @@
 ARPG Equipments Mod - Full Patch Notes
 
+========== v1.2.4 ==========
+* Now supports customization of both Primary and Secondary chest drop rates
+* Now supports decimal numbers in all chest custom drop rates
+
+
 ========== v1.2.3 ==========
-* Thanks to @Flux159 it's now possible to download the mod and its updates directly from the Ragnarok Offline App
-* Merged the Renewal and Pre-Renewal into a single file, that is loaded automatically depending on your version
+* Now supports a single file for both Renewal and Pre-Renewal Versions of the game (Thanks to @Flux159)
+* Can now be installed and updated directly from the Ragnarok Offline Mod Page (Thanks to @Flux159)
+
 
 ========== v1.2.2 ==========
 Fixed errors on NPC Bonus Attributes Extractor 

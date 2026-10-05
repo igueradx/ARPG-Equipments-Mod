@@ -5,25 +5,25 @@
 
 OnInit:
 	.id = 55000;
-	// Primary rate (Lvl 1 - 30) comes from the mod setting "chest_1_rate" (percent).
-	// Convert to basis points (1 - 10000) to match $Chest1_Rate.
-	.default_rate_low = callfunc("F_ModSetting", "arpg-equipments", "chest_1_rate", 5) * 100;
-	.rate_secondary   = 200;  // 2% (Lvl 31 - 99)
+
+	// Primary rate (Lvl 1 - 30, default 5%)
+	.@r1$ = replacestr("" + callfunc("F_ModSetting", "arpg-equipments", "chest_1_rate", "5"), ",", ".");
+	.@dot1 = strpos(.@r1$, ".");
+	.default_rate_low = (.@dot1 == -1 ? (atoi(.@r1$) * 100) : ((atoi(substr(.@r1$, 0, .@dot1 - 1)) * 100) + (atoi(charat(.@r1$, .@dot1 + 1)) * 10)));
+
+	// Secondary rate (Lvl 31 - 99, default 2%)
+	.@r2$ = replacestr("" + callfunc("F_ModSetting", "arpg-equipments", "chest_1_secondary_rate", "2"), ",", ".");
+	.@dot2 = strpos(.@r2$, ".");
+	.rate_secondary = (.@dot2 == -1 ? (atoi(.@r2$) * 100) : ((atoi(substr(.@r2$, 0, .@dot2 - 1)) * 100) + (atoi(charat(.@r2$, .@dot2 + 1)) * 10)));
 	end;
 
 OnNPCKillEvent:
 	.@lv = getmonsterinfo(killedrid, MOB_LV);
 	if (.@lv < 1 || .@lv > 99) end;
 
-	// Use custom rate if configured, otherwise default to 500
 	.@main_rate = ($Chest1_Rate > 0) ? $Chest1_Rate : .default_rate_low;
 
-	.@chance = 0;
-	if (.@lv <= 30) {
-		.@chance = .@main_rate;
-	} else {
-		.@chance = .rate_secondary;
-	}
+	.@chance = (.@lv <= 30) ? .@main_rate : .rate_secondary;
 
 	if (.@chance > 0 && rand(10000) < .@chance) {
 		if (checkweight(.id, 1)) {

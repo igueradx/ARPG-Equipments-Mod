@@ -8,17 +8,67 @@
   body { font: 14px/1.4 system-ui, sans-serif; margin: 0; padding: 18px 20px; }
   h1 { font-size: 18px; margin: 0 0 4px; }
   p.note { color: var(--dim); margin: 0 0 16px; }
-  details { border: 1px solid #8884; border-radius: 8px; padding: 8px 12px; margin-bottom: 12px; }
+  details { border: 1px solid #8884; border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; }
   summary { cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 8px; list-style: none; user-select: none; }
   summary::-webkit-details-marker { display: none; }
   summary::before { content: "▶"; display: inline-block; width: 1em; font-size: 11px; color: var(--dim); }
   details[open] > summary::before { content: "▼"; }
   summary .count { margin-left: auto; font-weight: 400; color: var(--dim); font-size: 12px; }
-  .row { display: flex; gap: 8px; align-items: flex-start; margin: 10px 0 0 26px; }
-  .row small { display: block; color: var(--dim); }
-  .row .rate { margin-left: auto; display: flex; align-items: center; gap: 4px; color: var(--dim); font-size: 12px; white-space: nowrap; }
-  .row .rate input { width: 56px; padding: 2px 4px; }
-  input[type=checkbox] { accent-color: var(--accent); }
+
+  /* Cleaner, spaced layout per chest option */
+  .chest-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px 0;
+    margin-left: 12px;
+    border-bottom: 1px solid #8882;
+  }
+  .chest-item:last-child { border-bottom: none; }
+  .chest-info { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+  .chest-info .title { font-weight: 500; display: flex; align-items: center; gap: 8px; cursor: pointer; }
+  .chest-info small { color: var(--dim); line-height: 1.35; }
+
+  /* Stacked rate inputs on the right */
+  .rates-container {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--dim);
+    white-space: nowrap;
+    padding-left: 8px;
+  }
+  .rate-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+  .rate-box input {
+    width: 54px;
+    padding: 3px 6px;
+    border: 1px solid #8885;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.15);
+    color: inherit;
+    font-size: 12px;
+    text-align: right;
+  }
+  .rate-hint {
+    font-size: 10px;
+    color: var(--dim);
+    text-align: right;
+    margin-top: 1px;
+    opacity: 0.85;
+  }
+
+  /* Advanced simple rows */
+  .simple-row { display: flex; gap: 8px; align-items: flex-start; margin: 10px 0 0 16px; }
+  .simple-row small { display: block; color: var(--dim); }
+
+  input[type=checkbox] { accent-color: var(--accent); cursor: pointer; }
   .actions { display: flex; gap: 8px; margin-top: 16px; }
   button { padding: 6px 14px; font-weight: 500; cursor: pointer; }
   #status { margin-top: 12px; color: var(--dim); min-height: 1.4em; }
@@ -46,9 +96,7 @@
 <div id="status"></div>
 
 <div class="tip-box">
-  💡 <b>Tip</b>: Primary drop rates set here are the server defaults applied on
-  restart. With <b>Show NPC</b> on, the <b>Chest Rates Customizer NPC in the
-  ARPG Hub</b> can change them live without a restart; "Reset all to default rates" in that NPC drops back to these set values.
+  💡 <b>Tip</b>: Rates can use decimals (example 1.5). With <b>Show NPC</b> enabled, you can also alter primary rates live in-game at the ARPG Hub without a restart.
 </div>
 
 <script>
@@ -58,6 +106,7 @@ const inputs = {};
 const numberInputs = {};
 const chestKeys = ['chest_1', 'chest_2', 'chest_3', 'chest_4', 'chest_5', 'chest_6'];
 const rateKeyFor = chestKey => `${chestKey}_rate`;
+const secRateKeyFor = chestKey => `${chestKey}_secondary_rate`;
 let settingsByKey = {};
 
 function syncGroup() {
@@ -68,13 +117,85 @@ function syncGroup() {
   $('count').textContent = `${on} of ${boxes.length} active`;
 }
 
-function booleanRow(setting, parent, rateSetting) {
-  const row = document.createElement('label');
-  row.className = 'row';
+function createRateBox(labelStr, rateSetting) {
+  const box = document.createElement('div');
+  box.className = 'rate-box';
+  box.onclick = e => e.stopPropagation();
+
+  const label = document.createElement('span');
+  label.textContent = labelStr;
+
+  const num = document.createElement('input');
+  num.type = 'number';
+  num.min = rateSetting.min ?? 0;
+  num.max = rateSetting.max ?? 100;
+  num.step = '0.1';
+  num.value = rateSetting.value ?? (rateSetting.default ?? 0);
+  numberInputs[rateSetting.key] = num;
+
+  const pct = document.createElement('span');
+  pct.textContent = '%';
+
+  box.append(label, num, pct);
+  return box;
+}
+
+function chestRow(setting, parent, primarySetting, secondarySetting) {
+  const item = document.createElement('div');
+  item.className = 'chest-item';
+
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.checked = setting.value === true;
+  checkbox.onchange = syncGroup;
+  inputs[setting.key] = checkbox;
+
+  const info = document.createElement('div');
+  info.className = 'chest-info';
+
+  const title = document.createElement('label');
+  title.className = 'title';
+  title.append(checkbox, document.createTextNode(setting.label || setting.key));
+
+  info.append(title);
+  if (setting.description) {
+    const desc = document.createElement('small');
+    desc.textContent = setting.description;
+    info.append(desc);
+  }
+
+  item.append(info);
+
+  if (primarySetting || secondarySetting) {
+    const rates = document.createElement('div');
+    rates.className = 'rates-container';
+
+    if (primarySetting) {
+      const pLabel = secondarySetting ? 'Primary rate' : 'Single rate';
+      rates.append(createRateBox(pLabel, primarySetting));
+    }
+    if (secondarySetting) {
+      rates.append(createRateBox('Secondary rate', secondarySetting));
+    }
+
+    // Text line indicating decimal support below the rate boxes
+    const hint = document.createElement('span');
+    hint.className = 'rate-hint';
+    hint.textContent = 'Accepts decimal numbers';
+    rates.append(hint);
+
+    item.append(rates);
+  }
+
+  parent.append(item);
+}
+
+function simpleBooleanRow(setting, parent) {
+  const label = document.createElement('label');
+  label.className = 'simple-row';
   const input = document.createElement('input');
   input.type = 'checkbox';
   input.checked = setting.value === true;
-  input.onchange = syncGroup;
   inputs[setting.key] = input;
 
   const text = document.createElement('span');
@@ -84,67 +205,19 @@ function booleanRow(setting, parent, rateSetting) {
     hint.textContent = setting.description;
     text.append(hint);
   }
-
-  row.append(input, text);
-
-  if (rateSetting) {
-    const rate = document.createElement('span');
-    rate.className = 'rate';
-    // The row is a <label>, so any click inside toggles the checkbox by default;
-    // stop propagation on the rate wrapper so typing or clicking in it doesn't.
-    rate.onclick = e => e.stopPropagation();
-    const label = document.createElement('span');
-    label.textContent = 'Primary rate';
-    const num = document.createElement('input');
-    num.type = 'number';
-    num.min = rateSetting.min ?? 0;
-    num.max = rateSetting.max ?? 100;
-    num.step = 1;
-    num.value = rateSetting.value;
-    numberInputs[rateSetting.key] = num;
-    const pct = document.createElement('span');
-    pct.textContent = '%';
-    rate.append(label, num, pct);
-    row.append(rate);
-  }
-
-  parent.append(row);
-}
-
-function numberRow(setting, parent) {
-  const row = document.createElement('div');
-  row.className = 'row';
-  const text = document.createElement('span');
-  text.textContent = setting.label || setting.key;
-  if (setting.description) {
-    const hint = document.createElement('small');
-    hint.textContent = setting.description;
-    text.append(hint);
-  }
-  const rate = document.createElement('span');
-  rate.className = 'rate';
-  const num = document.createElement('input');
-  num.type = 'number';
-  num.min = setting.min ?? 0;
-  num.max = setting.max ?? 100;
-  num.step = 1;
-  num.value = setting.value;
-  numberInputs[setting.key] = num;
-  const pct = document.createElement('span');
-  pct.textContent = '%';
-  rate.append(num, pct);
-  row.append(text, rate);
-  parent.append(row);
+  label.append(input, text);
+  parent.append(label);
 }
 
 function clampedRate(key) {
   const input = numberInputs[key];
+  if (!input) return undefined;
   const setting = settingsByKey[key] || {};
   const min = setting.min ?? 0;
   const max = setting.max ?? 100;
-  const raw = Number(input.value);
+  const raw = parseFloat(input.value);
   if (!Number.isFinite(raw)) return setting.value ?? min;
-  return Math.min(max, Math.max(min, Math.round(raw)));
+  return Math.min(max, Math.max(min, Math.round(raw * 10) / 10));
 }
 
 function values() {
@@ -175,19 +248,23 @@ async function run(button, work, done) {
     for (const chestKey of chestKeys) {
       const chest = settingsByKey[chestKey];
       if (!chest) continue;
-      booleanRow(chest, $('chests'), settingsByKey[rateKeyFor(chestKey)]);
+      chestRow(
+        chest,
+        $('chests'),
+        settingsByKey[rateKeyFor(chestKey)],
+        settingsByKey[secRateKeyFor(chestKey)]
+      );
     }
 
     const handled = new Set([
       ...chestKeys,
       ...chestKeys.map(rateKeyFor),
+      ...chestKeys.map(secRateKeyFor),
     ]);
     for (const setting of mod.settings) {
       if (handled.has(setting.key)) continue;
-      if (setting.value === true || setting.value === false) {
-        booleanRow(setting, $('advanced'));
-      } else if (typeof setting.value === 'number') {
-        numberRow(setting, $('advanced'));
+      if (typeof setting.value === 'boolean') {
+        simpleBooleanRow(setting, $('advanced'));
       }
     }
 
