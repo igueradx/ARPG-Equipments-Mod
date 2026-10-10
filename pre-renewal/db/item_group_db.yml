@@ -173,21 +173,6 @@ Body:
           - Index: 50
             Item: Improved_Arm_Guard_
             Rate: 1000
-          - Index: 51
-            Item: Angel's_Safeguard
-            Rate: 1000
-          - Index: 52
-            Item: Buckler_
-            Rate: 1000
-          - Index: 53
-            Item: Guard_
-            Rate: 1000
-          - Index: 54
-            Item: Memorize_Book_
-            Rate: 1000
-          - Index: 55
-            Item: Mirror_Shield_
-            Rate: 1000
           - Index: 56
             Item: Thief_Clothes_
             Rate: 1000
@@ -205,9 +190,6 @@ Body:
             Rate: 1000
           - Index: 61
             Item: Muffler_
-            Rate: 1000
-          - Index: 62
-            Item: Leather_Jacket_
             Rate: 1000
           - Index: 63
             Item: Boots_
@@ -265,6 +247,57 @@ Body:
             Rate: 1000
           - Index: 81
             Item: Black_Rose
+            Rate: 1000
+          - Index: 82
+            Item: Bow_
+            Rate: 1000
+          - Index: 83
+            Item: Cutter_
+            Rate: 1000
+          - Index: 84
+            Item: Spirit_Chain
+            Rate: 1000
+          - Index: 85
+            Item: Donut_In_Mouth
+            Rate: 1000
+          - Index: 86
+            Item: Hyegun_Hat
+            Rate: 1000
+          - Index: 87
+            Item: Para_Team_Hat
+            Rate: 1000
+          - Index: 88
+            Item: Sigrun's_Wing
+            Rate: 1000
+          - Index: 89
+            Item: Novice_Breast
+            Rate: 1000
+          - Index: 90
+            Item: Novice_Plate
+            Rate: 1000
+          - Index: 91
+            Item: Hypnotist's_Staff_
+            Rate: 1000
+          - Index: 92
+            Item: Orcish_Axe_
+            Rate: 1000
+          - Index: 93
+            Item: Tsurugi
+            Rate: 1000
+          - Index: 94
+            Item: Clip
+            Rate: 1000
+          - Index: 95
+            Item: Diamond_Ring
+            Rate: 1000
+          - Index: 96
+            Item: Gold_Ring
+            Rate: 1000
+          - Index: 97
+            Item: Novice_Armlet
+            Rate: 1000
+          - Index: 98
+            Item: Ring_Of_Flame_Lord
             Rate: 1000
 
       
@@ -391,20 +424,11 @@ Body:
           - Index: 39
             Item: Muffler_
             Rate: 1000
-          - Index: 40
-            Item: Shoes_
-            Rate: 1000
           - Index: 41
             Item: Boots_
             Rate: 1000
           - Index: 42
             Item: Helm_
-            Rate: 1000
-          - Index: 43
-            Item: Plate_Armor_
-            Rate: 1000
-          - Index: 44
-            Item: Boots_
             Rate: 1000
           - Index: 45
             Item: Leather_Jacket_
@@ -412,32 +436,14 @@ Body:
           - Index: 46
             Item: Necklace_
             Rate: 1000
-          - Index: 47
-            Item: Glove_
-            Rate: 1000
           - Index: 48
             Item: Mink_Coat
             Rate: 1000
           - Index: 49
             Item: Ninja_Suit_
             Rate: 1000
-          - Index: 50
-            Item: Ring_
-            Rate: 1000
-          - Index: 51
-            Item: Necklace_
-            Rate: 1000
           - Index: 52
             Item: Buckler_
-            Rate: 1000
-          - Index: 53
-            Item: Glove_
-            Rate: 1000
-          - Index: 54
-            Item: Brooch_
-            Rate: 1000
-          - Index: 55
-            Item: Rosary_
             Rate: 1000
           - Index: 59
             Item: Pauldron
@@ -495,6 +501,33 @@ Body:
             Rate: 1000
           - Index: 77
             Item: Matyr's_Flea_Guard
+            Rate: 1000
+          - Index: 78
+            Item: Rideword_Hat
+            Rate: 1000
+          - Index: 79
+            Item: Skewer
+            Rate: 1000
+          - Index: 80
+            Item: Expert_Ring
+            Rate: 1000
+          - Index: 81
+            Item: Galapago_Cap
+            Rate: 1000
+          - Index: 82
+            Item: Kiss_Of_Angel
+            Rate: 1000
+          - Index: 83
+            Item: Super_Novice_Hat_
+            Rate: 1000
+          - Index: 84
+            Item: Novice_Manteau
+            Rate: 1000
+          - Index: 85
+            Item: Red_Square_Bag
+            Rate: 1000
+          - Index: 86
+            Item: Scalpel
             Rate: 1000
           
 
@@ -674,9 +707,6 @@ Body:
             Rate: 1000
           - Index: 57
             Item: Crescent_Scythe
-            Rate: 1000
-          - Index: 58
-            Item: Zephyrus
             Rate: 1000
           - Index: 59
             Item: Staff_Of_Soul
@@ -885,12 +915,6 @@ Body:
           - Index: 127
             Item: Bradium_Shield
             Rate: 1000
-          - Index: 128
-            Item: Ganster_Mask
-            Rate: 1000
-          - Index: 129
-            Item: Iron_Cane
-            Rate: 1000
           - Index: 130
             Item: Smoking_Pipe
             Rate: 1000
@@ -909,17 +933,11 @@ Body:
           - Index: 135
             Item: Ear_Mufs
             Rate: 1000
-          - Index: 136
-            Item: Apple_Of_Archer
-            Rate: 1000
           - Index: 137
             Item: Pirate_Bandana
             Rate: 1000
           - Index: 138
             Item: Poo_Poo_Hat
-            Rate: 1000
-          - Index: 139
-            Item: Masquerade
             Rate: 1000
           - Index: 140
             Item: Ninja_Suit
@@ -935,4 +953,37 @@ Body:
             Rate: 1000
           - Index: 144
             Item: Diabolus_Armor
+            Rate: 1000
+          - Index: 145
+            Item: Stone_Buckler
+            Rate: 1000
+          - Index: 146
+            Item: Platinum_Shield
+            Rate: 1000
+          - Index: 147
+            Item: Krieger_Onehand_Sword3
+            Rate: 1000
+          - Index: 148
+            Item: Pilebuncker
+            Rate: 1000
+          - Index: 149
+            Item: Krieger_Suit1
+            Rate: 1000
+          - Index: 150
+            Item: Krieger_Muffler1
+            Rate: 1000
+          - Index: 151
+            Item: Krieger_Shoes1
+            Rate: 1000
+          - Index: 152
+            Item: Elemental_Sword
+            Rate: 1000
+          - Index: 153
+            Item: Krieger_Ring1
+            Rate: 1000
+          - Index: 154
+            Item: Mjolnir
+            Rate: 1000
+          - Index: 155
+            Item: Brysinggamen
             Rate: 1000

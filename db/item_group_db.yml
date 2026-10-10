@@ -173,21 +173,6 @@ Body:
           - Index: 50
             Item: Improved_Arm_Guard_
             Rate: 1000
-          - Index: 51
-            Item: Angel's_Safeguard
-            Rate: 1000
-          - Index: 52
-            Item: Buckler_
-            Rate: 1000
-          - Index: 53
-            Item: Guard_
-            Rate: 1000
-          - Index: 54
-            Item: Memorize_Book_
-            Rate: 1000
-          - Index: 55
-            Item: Mirror_Shield_
-            Rate: 1000
           - Index: 56
             Item: Thief_Clothes_
             Rate: 1000
@@ -205,9 +190,6 @@ Body:
             Rate: 1000
           - Index: 61
             Item: Muffler_
-            Rate: 1000
-          - Index: 62
-            Item: Leather_Jacket_
             Rate: 1000
           - Index: 63
             Item: Boots_
@@ -265,6 +247,57 @@ Body:
             Rate: 1000
           - Index: 81
             Item: Black_Rose
+            Rate: 1000
+          - Index: 82
+            Item: Bow_
+            Rate: 1000
+          - Index: 83
+            Item: Cutter_
+            Rate: 1000
+          - Index: 84
+            Item: Spirit_Chain
+            Rate: 1000
+          - Index: 85
+            Item: Donut_In_Mouth
+            Rate: 1000
+          - Index: 86
+            Item: Hyegun_Hat
+            Rate: 1000
+          - Index: 87
+            Item: Para_Team_Hat
+            Rate: 1000
+          - Index: 88
+            Item: Sigrun's_Wing
+            Rate: 1000
+          - Index: 89
+            Item: Novice_Breast
+            Rate: 1000
+          - Index: 90
+            Item: Novice_Plate
+            Rate: 1000
+          - Index: 91
+            Item: Hypnotist's_Staff_
+            Rate: 1000
+          - Index: 92
+            Item: Orcish_Axe_
+            Rate: 1000
+          - Index: 93
+            Item: Tsurugi
+            Rate: 1000
+          - Index: 94
+            Item: Clip
+            Rate: 1000
+          - Index: 95
+            Item: Diamond_Ring
+            Rate: 1000
+          - Index: 96
+            Item: Gold_Ring
+            Rate: 1000
+          - Index: 97
+            Item: Novice_Armlet
+            Rate: 1000
+          - Index: 98
+            Item: Ring_Of_Flame_Lord
             Rate: 1000
 
       
@@ -391,20 +424,11 @@ Body:
           - Index: 39
             Item: Muffler_
             Rate: 1000
-          - Index: 40
-            Item: Shoes_
-            Rate: 1000
           - Index: 41
             Item: Boots_
             Rate: 1000
           - Index: 42
             Item: Helm_
-            Rate: 1000
-          - Index: 43
-            Item: Plate_Armor_
-            Rate: 1000
-          - Index: 44
-            Item: Boots_
             Rate: 1000
           - Index: 45
             Item: Leather_Jacket_
@@ -412,32 +436,14 @@ Body:
           - Index: 46
             Item: Necklace_
             Rate: 1000
-          - Index: 47
-            Item: Glove_
-            Rate: 1000
           - Index: 48
             Item: Mink_Coat
             Rate: 1000
           - Index: 49
             Item: Ninja_Suit_
             Rate: 1000
-          - Index: 50
-            Item: Ring_
-            Rate: 1000
-          - Index: 51
-            Item: Necklace_
-            Rate: 1000
           - Index: 52
             Item: Buckler_
-            Rate: 1000
-          - Index: 53
-            Item: Glove_
-            Rate: 1000
-          - Index: 54
-            Item: Brooch_
-            Rate: 1000
-          - Index: 55
-            Item: Rosary_
             Rate: 1000
           - Index: 59
             Item: Pauldron
@@ -495,6 +501,33 @@ Body:
             Rate: 1000
           - Index: 77
             Item: Matyr's_Flea_Guard
+            Rate: 1000
+          - Index: 78
+            Item: Rideword_Hat
+            Rate: 1000
+          - Index: 79
+            Item: Skewer
+            Rate: 1000
+          - Index: 80
+            Item: Expert_Ring
+            Rate: 1000
+          - Index: 81
+            Item: Galapago_Cap
+            Rate: 1000
+          - Index: 82
+            Item: Kiss_Of_Angel
+            Rate: 1000
+          - Index: 83
+            Item: Super_Novice_Hat_
+            Rate: 1000
+          - Index: 84
+            Item: Novice_Manteau
+            Rate: 1000
+          - Index: 85
+            Item: Red_Square_Bag
+            Rate: 1000
+          - Index: 86
+            Item: Scalpel
             Rate: 1000
           
 
@@ -674,9 +707,6 @@ Body:
             Rate: 1000
           - Index: 57
             Item: Crescent_Scythe
-            Rate: 1000
-          - Index: 58
-            Item: Zephyrus
             Rate: 1000
           - Index: 59
             Item: Staff_Of_Soul
@@ -885,12 +915,6 @@ Body:
           - Index: 127
             Item: Bradium_Shield
             Rate: 1000
-          - Index: 128
-            Item: Ganster_Mask
-            Rate: 1000
-          - Index: 129
-            Item: Iron_Cane
-            Rate: 1000
           - Index: 130
             Item: Smoking_Pipe
             Rate: 1000
@@ -909,17 +933,11 @@ Body:
           - Index: 135
             Item: Ear_Mufs
             Rate: 1000
-          - Index: 136
-            Item: Apple_Of_Archer
-            Rate: 1000
           - Index: 137
             Item: Pirate_Bandana
             Rate: 1000
           - Index: 138
             Item: Poo_Poo_Hat
-            Rate: 1000
-          - Index: 139
-            Item: Masquerade
             Rate: 1000
           - Index: 140
             Item: Ninja_Suit
@@ -935,6 +953,39 @@ Body:
             Rate: 1000
           - Index: 144
             Item: Diabolus_Armor
+            Rate: 1000
+          - Index: 145
+            Item: Stone_Buckler
+            Rate: 1000
+          - Index: 146
+            Item: Platinum_Shield
+            Rate: 1000
+          - Index: 147
+            Item: Krieger_Onehand_Sword3
+            Rate: 1000
+          - Index: 148
+            Item: Pilebuncker
+            Rate: 1000
+          - Index: 149
+            Item: Krieger_Suit1
+            Rate: 1000
+          - Index: 150
+            Item: Krieger_Muffler1
+            Rate: 1000
+          - Index: 151
+            Item: Krieger_Shoes1
+            Rate: 1000
+          - Index: 152
+            Item: Elemental_Sword
+            Rate: 1000
+          - Index: 153
+            Item: Krieger_Ring1
+            Rate: 1000
+          - Index: 154
+            Item: Mjolnir
+            Rate: 1000
+          - Index: 155
+            Item: Brysinggamen
             Rate: 1000
 
 
@@ -963,7 +1014,7 @@ Body:
             Item: Temporal_Luk_Boots_
             Rate: 1000
           - Index: 7
-            Item: Temporal_STR_Boots_
+            Item: Temporal_Str_Boots_
             Rate: 1000
           - Index: 8
             Item: Temporal_Vit_Boots_
@@ -1484,6 +1535,147 @@ Body:
           - Index: 180
             Item: C_Flame_Muffler
             Rate: 1000
+          - Index: 181
+            Item: Gambler_Seal_KR_
+            Rate: 1000
+          - Index: 182
+            Item: Chain_Of_Seal_
+            Rate: 1000
+          - Index: 183
+            Item: Choker_Of_Restriction
+            Rate: 1000
+          - Index: 184
+            Item: Diamond_Ace_Range
+            Rate: 1000
+          - Index: 185
+            Item: Cvt_Magical_Wing
+            Rate: 1000
+          - Index: 186
+            Item: Cor_Core_Booster_
+            Rate: 1000
+          - Index: 187
+            Item: Spade_Ace_Melee
+            Rate: 1000
+          - Index: 188
+            Item: Clover_Ace_Defense
+            Rate: 1000
+          - Index: 189
+            Item: Cor_Core_Booster
+            Rate: 1000
+          - Index: 190
+            Item: Heart_Ace_Melee
+            Rate: 1000
+          - Index: 191
+            Item: Hero_Insignia
+            Rate: 1000
+          - Index: 192
+            Item: Thorn_Staff_IL
+            Rate: 1000
+          - Index: 193
+            Item: Tree_Of_Sprout_INT
+            Rate: 1000
+          - Index: 194
+            Item: 2Para_Armor_B
+            Rate: 1000
+          - Index: 195
+            Item: Evilspirit_Gloves
+            Rate: 1000
+          - Index: 196
+            Item: 2Para_Cap_B
+            Rate: 1000
+          - Index: 197
+            Item: Survive_Circlet_K_LT
+            Rate: 1000
+          - Index: 198
+            Item: SurviveOrb_K_LT
+            Rate: 1000
+          - Index: 199
+            Item: 2Para_Manteau_B
+            Rate: 1000
+          - Index: 200
+            Item: 2Para_Acc_L_B
+            Rate: 1000
+          - Index: 201
+            Item: 2Para_Cap_A
+            Rate: 1000
+          - Index: 202
+            Item: Celine_Dress
+            Rate: 1000
+          - Index: 203
+            Item: Cvt_Physical_Wing
+            Rate: 1000
+          - Index: 204
+            Item: 2Para_Boots_B
+            Rate: 1000
+          - Index: 205
+            Item: 2Para_Acc_L_A
+            Rate: 1000
+          - Index: 206
+            Item: 2Para_Acc_R_B
+            Rate: 1000
+          - Index: 207
+            Item: FurSeal_Fan_LT
+            Rate: 1000
+          - Index: 208
+            Item: SeeOtter_Fan_LT
+            Rate: 1000
+          - Index: 209
+            Item: Ignis_CapK
+            Rate: 1000
+          - Index: 210
+            Item: Chain_Of_Seal
+            Rate: 1000
+          - Index: 211
+            Item: Celine_Brooch_K
+            Rate: 1000
+          - Index: 212
+            Item: Officer_Cap_LT
+            Rate: 1000
+          - Index: 213
+            Item: Tree_Of_Sprout_VIT
+            Rate: 1000
+          - Index: 214
+            Item: 2Para_Armor_A
+            Rate: 1000
+          - Index: 215
+            Item: 2Para_Manteau_A
+            Rate: 1000
+          - Index: 216
+            Item: 2Para_Boots_A
+            Rate: 1000
+          - Index: 217
+            Item: 2Para_Acc_R_A
+            Rate: 1000
+          - Index: 218
+            Item: Large_Sorcerer_Crown
+            Rate: 1000
+          - Index: 219
+            Item: Racing_C_Super
+            Rate: 1000
+          - Index: 220
+            Item: Tree_Of_Sprout_STR
+            Rate: 1000
+          - Index: 221
+            Item: Grace_Crimson_Robe
+            Rate: 1000
+          - Index: 222
+            Item: Grace_Kart_Suit
+            Rate: 1000
+          - Index: 223
+            Item: Supplement_Part_Con
+            Rate: 1000
+          - Index: 224
+            Item: Upgrade_Part_Engine
+            Rate: 1000
+          - Index: 225
+            Item: ShieldOfGuardsman
+            Rate: 1000
+          - Index: 226
+            Item: 3Para_Mace_GN
+            Rate: 1000
+          - Index: 227
+            Item: Pilebuncker_S
+            Rate: 1000
 
 
       - SubGroup: 6
@@ -1870,9 +2062,6 @@ Body:
           - Index: 127
             Item: Adulter_F_Ballista
             Rate: 1000
-          - Index: 128
-            Item: Adulter_F_A_Bow
-            Rate: 1000
           - Index: 129
             Item: C_Black_Magenta_Ribbon
             Rate: 1000
@@ -1926,9 +2115,6 @@ Body:
             Rate: 1000
           - Index: 146
             Item: S_M_Mammoth_Shoes
-            Rate: 1000
-          - Index: 150
-            Item: S_M_Mammoth_Pendant
             Rate: 1000
           - Index: 151
             Item: S_Durable_Weapon
@@ -2062,9 +2248,6 @@ Body:
           - Index: 194
             Item: Sin_Ring_T
             Rate: 1000
-          - Index: 195
-            Item: Sin_Necklace_E
-            Rate: 1000
           - Index: 196
             Item: Up_Barb_Wire_K
             Rate: 1000
@@ -2120,7 +2303,73 @@ Body:
             Item: Up_Golden_L_Launcher
             Rate: 1000
           - Index: 214
-            Item: Up_Blue_Crystal_Staff
+            Item: Mad_Bunny_K_LT
+            Rate: 1000
+          - Index: 215
+            Item: Pirate_Captain_Coat
+            Rate: 1000
+          - Index: 216
+            Item: Hero_Boots_LT
+            Rate: 1000
+          - Index: 217
+            Item: Shine_Necklace_R
+            Rate: 1000
+          - Index: 218
+            Item: Shine_Necklace_S
+            Rate: 1000
+          - Index: 219
+            Item: Shine_Ring_R
+            Rate: 1000
+          - Index: 220
+            Item: Shine_Ring_S
+            Rate: 1000
+          - Index: 221
+            Item: Ein_SAFETY_PENDR
+            Rate: 1000
+          - Index: 222
+            Item: Cassock_Manteau
+            Rate: 1000
+          - Index: 223
+            Item: Auto_BC_R
+            Rate: 1000
+          - Index: 224
+            Item: Ein_SAFETY_PENDL
+            Rate: 1000
+          - Index: 225
+            Item: Ignis_CapK_LT
+            Rate: 1000
+          - Index: 226
+            Item: S_Circlet_Of_Time_LG
+            Rate: 1000
+          - Index: 227
+            Item: Old_Protect_Of_Crown
+            Rate: 1000
+          - Index: 228
+            Item: S_Circlet_Of_Time_AB
+            Rate: 1000
+          - Index: 229
+            Item: S_Circlet_Of_Time_RA
+            Rate: 1000
+          - Index: 230
+            Item: S_Circlet_Of_Time_WL
+            Rate: 1000
+          - Index: 231
+            Item: Subject_Aura
+            Rate: 1000
+          - Index: 232
+            Item: Manteau_Of_Fallen_
+            Rate: 1000
+          - Index: 233
+            Item: Cassock_Boots
+            Rate: 1000
+          - Index: 234
+            Item: Auto_BC_L
+            Rate: 1000
+          - Index: 235
+            Item: Master_Soul_Rifle_LT
+            Rate: 1000
+          - Index: 236
+            Item: Blessed_Knife_LT
             Rate: 1000
           
 
@@ -2682,6 +2931,219 @@ Body:
             Rate: 1000
           - Index: 184
             Item: C_Power_Of_Thor
+            Rate: 1000
+          - Index: 185
+            Item: Glacier_Guard
+            Rate: 1000
+          - Index: 186
+            Item: Signet_Of_Crt_Star
+            Rate: 1000
+          - Index: 187
+            Item: Corruption_Boots_K
+            Rate: 1000
+          - Index: 188
+            Item: Signet_Of_Spl_Star
+            Rate: 1000
+          - Index: 189
+            Item: Plain_Rune_Boots
+            Rate: 1000
+          - Index: 190
+            Item: Yorscalp_Boots
+            Rate: 1000
+          - Index: 191
+            Item: Signet_Of_Autumn
+            Rate: 1000
+          - Index: 192
+            Item: Circul_Of_Life_Winter
+            Rate: 1000
+          - Index: 193
+            Item: Ice_Rune_Boots
+            Rate: 1000
+          - Index: 194
+            Item: Signet_Of_Pow_Star
+            Rate: 1000
+          - Index: 195
+            Item: Signet_Of_Winter
+            Rate: 1000
+          - Index: 196
+            Item: Soul_Rune_Ring
+            Rate: 1000
+          - Index: 197
+            Item: Circul_Of_Life_Autumn
+            Rate: 1000
+          - Index: 198
+            Item: Beelzebub_Crown_K
+            Rate: 1000
+          - Index: 199
+            Item: Death_Rune_Hood
+            Rate: 1000
+          - Index: 200
+            Item: Gaebolg_Boots
+            Rate: 1000
+          - Index: 201
+            Item: Soul_M_Ring
+            Rate: 1000
+          - Index: 202
+            Item: Yorscalp_M_Circlet
+            Rate: 1000
+          - Index: 203
+            Item: Yorscalp_P_Circlet
+            Rate: 1000
+          - Index: 204
+            Item: Glacier_Muffler
+            Rate: 1000
+          - Index: 205
+            Item: Temple_M_Ring
+            Rate: 1000
+          - Index: 206
+            Item: Vesper_H_Gear_K
+            Rate: 1000
+          - Index: 207
+            Item: Glacier_Robe
+            Rate: 1000
+          - Index: 208
+            Item: Plain_Rune_Hood
+            Rate: 1000
+          - Index: 209
+            Item: Signet_Of_Sta_Star
+            Rate: 1000
+          - Index: 210
+            Item: Temple_Rune_Ring
+            Rate: 1000
+          - Index: 211
+            Item: Boitata_Hat_K
+            Rate: 1000
+          - Index: 212
+            Item: Soul_P_R_Robe2
+            Rate: 1000
+          - Index: 213
+            Item: Glacier_Shoes
+            Rate: 1000
+          - Index: 214
+            Item: Signet_Of_Summer
+            Rate: 1000
+          - Index: 215
+            Item: Corrupt_P_R_Cloth2
+            Rate: 1000
+          - Index: 216
+            Item: Glacier_Armor
+            Rate: 1000
+          - Index: 217
+            Item: Circul_Of_Life_Spring
+            Rate: 1000
+          - Index: 218
+            Item: Circul_Of_Life_Summer
+            Rate: 1000
+          - Index: 219
+            Item: Ice_Rune_Hood
+            Rate: 1000
+          - Index: 220
+            Item: Glacier_Boots
+            Rate: 1000
+          - Index: 221
+            Item: Ice_S_R_Suits2
+            Rate: 1000
+          - Index: 222
+            Item: Glacier_Manteau
+            Rate: 1000
+          - Index: 223
+            Item: D_Glacier_Wand
+            Rate: 1000
+          - Index: 224
+            Item: Glacier_Staff
+            Rate: 1000
+          - Index: 225
+            Item: Glacier_Wand
+            Rate: 1000
+          - Index: 226
+            Item: Signet_Of_Spring
+            Rate: 1000
+          - Index: 227
+            Item: D_Glacier_Bow
+            Rate: 1000
+          - Index: 228
+            Item: Glacier_Ring
+            Rate: 1000
+          - Index: 229
+            Item: Venom_M_Ring
+            Rate: 1000
+          - Index: 230
+            Item: Flame_E_R_Armor2
+            Rate: 1000
+          - Index: 231
+            Item: Flame_Rune_Boots
+            Rate: 1000
+          - Index: 232
+            Item: MD_Geffen_Shield
+            Rate: 1000
+          - Index: 233
+            Item: Dimen_AG_Staff
+            Rate: 1000
+          - Index: 234
+            Item: Glacier_Pendant
+            Rate: 1000
+          - Index: 235
+            Item: Venom_Rune_Ring
+            Rate: 1000
+          - Index: 236
+            Item: Time_DM_R_Crown_AG
+            Rate: 1000
+          - Index: 237
+            Item: Time_DM_R_Crown_DK
+            Rate: 1000
+          - Index: 238
+            Item: Time_DM_R_Crown_IG
+            Rate: 1000
+          - Index: 239
+            Item: Time_DM_R_Crown_SOA
+            Rate: 1000
+          - Index: 240
+            Item: Time_DM_R_Crown_WH
+            Rate: 1000
+          - Index: 241
+            Item: Corrupt_P_R_Cloth
+            Rate: 1000
+          - Index: 242
+            Item: Gaebolg_Armor
+            Rate: 1000
+          - Index: 243
+            Item: Gaebolg_Manteau
+            Rate: 1000
+          - Index: 244
+            Item: D_Glacier_Shoes
+            Rate: 1000
+          - Index: 245
+            Item: D_Glacier_Book
+            Rate: 1000
+          - Index: 246
+            Item: D_Glacier_Spear
+            Rate: 1000
+          - Index: 247
+            Item: Dimen_DK_Lance
+            Rate: 1000
+          - Index: 248
+            Item: Dimen_SOA_Rod
+            Rate: 1000
+          - Index: 249
+            Item: Dimen_WH_C_Bow
+            Rate: 1000
+          - Index: 250
+            Item: Glacier_Book
+            Rate: 1000
+          - Index: 251
+            Item: Glacier_Bow
+            Rate: 1000
+          - Index: 252
+            Item: Glacier_Spear
+            Rate: 1000
+          - Index: 253
+            Item: Gaebolg_Glove
+            Rate: 1000
+          - Index: 254
+            Item: Gaebolg_Ring
+            Rate: 1000
+          - Index: 255
+            Item: Signet_Of_Con_Star
             Rate: 1000
           
 
