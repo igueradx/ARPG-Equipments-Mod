@@ -14,7 +14,7 @@ Custom-made progression system for [Ragnarok Offline](https://github.com/Flux159
 ## Inspiration and Future Updates
 
 Specifically designed to be put togheter with other endgame mods, for scaling challenges and rewards, not limited by the default Ragnarok experience with the regular Episodes.
-1) Receive Tiered Chests with special equipment according to the level of monsters you kill - Low level monsters rewards basic equipment with low bonus, high level monsters rewards better chests with specialized equipment, shadow gear and costumes
+1) Receive Tiered Chests with special equipment according to the level of monsters you kill - Low level monsters rewards basic equipment with low bonus, high level monsters rewards better chests with specialized equipment, covering weapons, armor, garments, footgear, accessories, shields, headgear, set pieces, shadow gear and costumes. The item pools follow the mid-game and end-game gear recommended by the MuhRO class builds, so the chests can carry a build from its first steps into its final set
 2) Advanced item crafting (transmuting Bonus Attributes from one item to any Equipment you want, changing specific bonuses or even make them stronger)
 3) Custom Hub area with multiple NPCs tweaked and created for the mod (acessible by the Dark Knight NPC in Prontera, southwest of the fountain)
 

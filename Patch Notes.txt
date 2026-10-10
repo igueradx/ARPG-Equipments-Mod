@@ -1,5 +1,16 @@
 ARPG Equipments Mod - Full Patch Notes
 
+========== v1.2.5 ==========
+* Expanded all 6 chest item pools with equipment recommended by MuhRO class builds (mid-game and end-game)
+  - Tier 1 now has 93 items, Tier 2 has 75, Tier 3 has 151, Tier 4 has 228, Tier 5 has 230 and Tier 6 has 256
+  - New headgear coverage: upper, middle and lower head slots for Tiers 4-6 (previously empty)
+  - New shields (Illusion of Twins, Geffen Night Arena, Mad Bunny-LT, Glacier Guard), class set pieces
+    (Grace, Illusion, Gray Wolf, Glacier, Gaebolg, Varmundt Rune) and end-game accessories
+    (Brilliant Light, Sinful, Signets of Star, Circulation of Life)
+* Fixed an item name in Tier 4 that could never drop (Temporal Str Boots)
+* Removed 24 duplicated entries that were giving some items a double drop chance
+
+
 ========== v1.2.4 ==========
 * Now supports customization of both Primary and Secondary chest drop rates
 * Now supports decimal numbers in all chest custom drop rates
